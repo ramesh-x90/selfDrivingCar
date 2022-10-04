@@ -18,12 +18,10 @@ class CarsManager {
       let { x, y } = roadManager.getAspawnLocation();
 
       let duplicate = this.carList.find((car) => car._x == x && car._y == y);
-      // if (duplicate) {
-      //   continue;
-      // }
-      if (i % 100 == 0) {
-        this.carList.push(new Car(x, y, "PLAYER"));
-      } else this.carList.push(new Car(x, y, "AI"));
+      if (duplicate) {
+        continue;
+      }
+      this.carList.push(new Car(x, y, "AI"));
     }
   }
 
@@ -31,8 +29,7 @@ class CarsManager {
     let segs: segment[] = [];
     if (currentCar.type == "PLAYER") return segs;
     this.carList.forEach((car) => {
-      if (car.id != currentCar.id && car.type != "AI" && !car.damaged)
-        segs.push(...car.getIntersectionSegments());
+      if (car.id != currentCar.id) segs.push(...car.getIntersectionSegments());
     });
 
     return segs;

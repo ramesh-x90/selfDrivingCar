@@ -5,7 +5,7 @@ import { CarsManager } from "./CarsManager";
 class World {
   roadM = new RoadManager();
   private ctx: CanvasRenderingContext2D;
-  carManager = new CarsManager(1000, this.roadM);
+  carManager = new CarsManager(1, this.roadM);
 
   constructor(ctx: CanvasRenderingContext2D) {
     this.ctx = ctx;
