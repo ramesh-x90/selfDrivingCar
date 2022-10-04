@@ -1,0 +1,12 @@
+{
+  "name": "car-simulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -c webpack.config.js -w"
+  },
+  "author": "ramesh",
+  "license": "ISC"
+}
